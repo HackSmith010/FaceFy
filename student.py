@@ -5,7 +5,6 @@ from tkinter import messagebox
 from tkcalendar import DateEntry
 import mysql.connector
 import cv2
-from cv2 import *
 import threading
 
 
@@ -43,7 +42,7 @@ class Student:
 
         # bg_image
         img1 = Image.open("Images/bgImg1.jpeg")
-        img1 = img1.resize((1366, 768))
+        img1 = img1.resize((1366, 723))
         self.photoimg1 = ImageTk.PhotoImage(img1)
 
         bg_lbl = Label(self.root, image=self.photoimg1)
@@ -817,7 +816,7 @@ class Student:
                         self.var_Address.get(),
                         self.var_Teacher_names.get(),
                         self.var_radio1.get(),
-                        self.var_Std_id.get(),
+                        self.var_Std_id.get()+"1",
                     ),
                 )
                 conn.commit()
@@ -855,7 +854,7 @@ class Student:
                                 face_resized, cv2.COLOR_BGR2GRAY
                             )
                             file_path = (
-                                f"data/user.{self.var_Std_id.get()}.{img_id}.jpg"
+                                "data/user."+str(id)+"."+str(img_id)+".jpg"
                             )
                             cv2.imwrite(file_path, face_grayscale)
                             cv2.putText(

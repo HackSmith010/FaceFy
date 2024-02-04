@@ -1,8 +1,13 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk
-from student import Student
+from tkinter import messagebox
+import cv2
+import numpy as np
 import os
+from traindata import Train
+from student import Student
+
 
 class Face_Recognition_System:
     def __init__(self, root):
@@ -24,7 +29,7 @@ class Face_Recognition_System:
         self.photoimg1 = ImageTk.PhotoImage(img1)
 
         bg_lbl = Label(self.root, image=self.photoimg1)
-        bg_lbl.place(x=0, y=45, width=1366, height=768)
+        bg_lbl.place(x=0, y=45, width=1366, height=723)
 
         # student_button
         img2 = Image.open("Images/details.jpeg")
@@ -88,12 +93,13 @@ class Face_Recognition_System:
         img5 = img5.resize((220, 220))
         self.photoimg5 = ImageTk.PhotoImage(img5)
 
-        b4 = Button(bg_lbl, image=self.photoimg5)
-        b4.place(x=200, y=400, width=220, height=220)
+        b4 = Button(bg_lbl,command=self.train_data,image=self.photoimg5)
+        b4.place(x=200, y=400,width=220, height=220)
 
         b4_1 = Button(
             bg_lbl,
             text="Train Data",
+            command=self.train_data,
             cursor="hand2",
             font=("times new roman", 15, "bold"),
             bg="darkblue",
@@ -106,7 +112,7 @@ class Face_Recognition_System:
         img6 = img6.resize((220, 220))
         self.photoimg6 = ImageTk.PhotoImage(img6)
 
-        b5 = Button(bg_lbl,command=self.open_img,image=self.photoimg6, cursor="hand2")
+        b5 = Button(bg_lbl, command=self.open_img, image=self.photoimg6, cursor="hand2")
         b5.place(x=600, y=400, width=220, height=220)
 
         b5_1 = Button(
@@ -141,14 +147,15 @@ class Face_Recognition_System:
     def open_img(self):
         os.startfile("data")
 
-
-
-
         # ================Functions==================
 
     def student_System(self):
         self.new_window = Toplevel(self.root)
         self.app = Student(self.new_window)
+        
+    def train_data(self):
+        self.new_window = Toplevel(self.root)
+        self.app = Train(self.new_window)
 
 
 if __name__ == "__main__":
