@@ -156,6 +156,7 @@ class Face_Recognition_System:
     def train_data(self):
         self.new_window = Toplevel(self.root)
         self.app = Train(self.new_window)
+        self.app.new_window.focus_force()
 
 
 if __name__ == "__main__":
