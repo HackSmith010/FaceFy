@@ -795,11 +795,14 @@ class Student:
                     database="face_recognizer",
                 )
                 my_cursor = conn.cursor()
-                my_cursor.execute("select * from student")
+                my_cursor.execute("select Student_Id from student")
+                
                 my_result = my_cursor.fetchall()
-                id = 0
-                for x in my_result:
-                    id += 1
+                values = [x[0] for x in my_result]
+                id=None
+                for id in values:
+                    print(f"Results: {id}")
+                
                 my_cursor.execute(
                     "update student set Dep=%s,Course=%s,Year=%s,Semester=%s,Student_name=%s,RollNo=%s,Gender=%s,DOB=%s,Email=%s,PhoneNo=%s,Address=%s,Teacher=%s,PhotoSampleStatus=%s where Student_Id=%s",
                     (
@@ -839,7 +842,7 @@ class Student:
                         return face_cropped
 
                 def capture_images():
-                    cap = cv2.VideoCapture(2)
+                    cap = cv2.VideoCapture(1)
                     img_id = 0
 
                     while True:

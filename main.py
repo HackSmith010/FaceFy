@@ -1,12 +1,11 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk
-from tkinter import messagebox
-import cv2
-import numpy as np
 import os
+
 from traindata import Train
 from student import Student
+from face_recognition import Face_Recognition
 
 
 class Face_Recognition_System:
@@ -57,7 +56,7 @@ class Face_Recognition_System:
         img3 = img3.resize((220, 220))
         self.photoimg3 = ImageTk.PhotoImage(img3)
 
-        b2 = Button(bg_lbl, image=self.photoimg3, cursor="hand2")
+        b2 = Button(bg_lbl, image=self.photoimg3,command=self.face_data, cursor="hand2")
         b2.place(x=600, y=100, width=220, height=220)
 
         b2_1 = Button(
@@ -65,6 +64,7 @@ class Face_Recognition_System:
             text="Face Recognition",
             cursor="hand2",
             font=("times new roman", 15, "bold"),
+            command=self.face_data,
             bg="darkblue",
             fg="white",
         )
@@ -156,8 +156,10 @@ class Face_Recognition_System:
     def train_data(self):
         self.new_window = Toplevel(self.root)
         self.app = Train(self.new_window)
-        self.app.new_window.focus_force()
 
+    def face_data(self):
+        self.new_window = Toplevel(self.root)
+        self.app = Face_Recognition(self.new_window)
 
 if __name__ == "__main__":
     root = Tk()
