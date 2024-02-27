@@ -586,7 +586,7 @@ class Student:
                 conn = mysql.connector.connect(
                     host="localhost",
                     username="root",
-                    password="anshu2004",
+                    password="pass123",
                     database="face_recognizer",
                 )
                 my_cursor = conn.cursor()
@@ -625,7 +625,7 @@ class Student:
         conn = mysql.connector.connect(
             host="localhost",
             username="root",
-            password="anshu2004",
+            password="pass123",
             database="face_recognizer",
         )
         my_cursor = conn.cursor()
@@ -683,7 +683,7 @@ class Student:
                     conn = mysql.connector.connect(
                         host="localhost",
                         username="root",
-                        password="anshu2004",
+                        password="pass123",
                         database="face_recognizer",
                     )
                     my_cursor = conn.cursor()
@@ -739,7 +739,7 @@ class Student:
                     conn = mysql.connector.connect(
                         host="localhost",
                         username="root",
-                        password="anshu2004",
+                        password="pass123",
                         database="face_recognizer",
                     )
                     my_cursor = conn.cursor()
@@ -791,7 +791,7 @@ class Student:
                 conn = mysql.connector.connect(
                     host="localhost",
                     username="root",
-                    password="anshu2004",
+                    password="pass123",
                     database="face_recognizer",
                 )
                 my_cursor = conn.cursor()
