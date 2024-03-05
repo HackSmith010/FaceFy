@@ -42,7 +42,7 @@ class Student:
 
         # bg_image
         img1 = Image.open("Images/bgImg1.jpeg")
-        img1 = img1.resize((1366, 723))
+        img1 = img1.resize((1366, 768))
         self.photoimg1 = ImageTk.PhotoImage(img1)
 
         bg_lbl = Label(self.root, image=self.photoimg1)
@@ -586,7 +586,7 @@ class Student:
                 conn = mysql.connector.connect(
                     host="localhost",
                     username="root",
-                    password="pass123",
+                    password="anshu2004",
                     database="face_recognizer",
                 )
                 my_cursor = conn.cursor()
@@ -625,7 +625,7 @@ class Student:
         conn = mysql.connector.connect(
             host="localhost",
             username="root",
-            password="pass123",
+            password="anshu2004",
             database="face_recognizer",
         )
         my_cursor = conn.cursor()
@@ -683,7 +683,7 @@ class Student:
                     conn = mysql.connector.connect(
                         host="localhost",
                         username="root",
-                        password="pass123",
+                        password="anshu2004",
                         database="face_recognizer",
                     )
                     my_cursor = conn.cursor()
@@ -739,7 +739,7 @@ class Student:
                     conn = mysql.connector.connect(
                         host="localhost",
                         username="root",
-                        password="pass123",
+                        password="anshu2004",
                         database="face_recognizer",
                     )
                     my_cursor = conn.cursor()
@@ -791,7 +791,7 @@ class Student:
                 conn = mysql.connector.connect(
                     host="localhost",
                     username="root",
-                    password="pass123",
+                    password="anshu2004",
                     database="face_recognizer",
                 )
                 my_cursor = conn.cursor()
