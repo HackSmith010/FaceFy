@@ -1,4 +1,4 @@
-# 👁️ FaceFy - AI Face Recognition System..🤖  
+# 👁️ FaceFy - AI Face Recognition System...🤖  
 
 **FaceFy** is an advanced **face recognition** system using AI and deep learning. It can be used for **authentication, security, and identity verification** in real-time.
 
